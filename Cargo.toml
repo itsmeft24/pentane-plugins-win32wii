@@ -1,0 +1,3 @@
+[workspace]
+members = ["choreo-test", "four-player-splitscreen",  "takedown-minions-w32w", "ui-scale-fix"]
+resolver = "2"
