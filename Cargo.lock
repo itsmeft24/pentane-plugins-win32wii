@@ -16,6 +16,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "FastNav"
+version = "0.1.0"
+dependencies = [
+ "libc",
+ "libc-stdhandle",
+ "once_cell",
+ "pentane",
+ "sunset-rs",
+ "windows",
+ "windows-sys 0.59.0",
+]
+
+[[package]]
 name = "FourPlayerSplitScreen"
 version = "0.1.0"
 dependencies = [
