@@ -27,5 +27,9 @@ extern "C" fn Pentane_Main() {
         *((0x00acdbc7 + 3) as *mut u8) = 1;
         utils::set_permission((0x00acdbc7 + 3) as *mut (), 1, restore).unwrap();
 		sunset_rs::inst::call(0x00acdbda as *mut (), get_choreo_name as *mut ());
+        
+        // Fixes an issue where the choreo test would crash with `R_ERROR_BUFFER_CMD_LIST_OVERFLOW` on load.
+        // This just increases the max size of the command list for buffers created in `c2_submitBeginFrameJob`.
+        sunset_rs::inst::push_u32(0x005f78f0 as *mut (), 1024);
     }
 }
